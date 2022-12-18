@@ -1,0 +1,33 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/result" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{result._id}}">
+    {{!-- <h3>Insert result Details</h3> --}}
+    <div class="form-group">
+    <label>Party Name</label>
+    <select class="form-control" name="partyName" placeholder="Party Name" value="{{result.partyName}}">
+     <option value=""></option>   
+    <option value="Congress">Congress</option>
+    <option value="Shiv sena">Shiv sena</option>
+    <option value="AAP">AAP</option>
+    <option value="NCP">NCP</option>
+    <option value="BJP">BJP</option>
+  </select>
+    <div class="text-danger">
+   {{result.partyNameError}}</div>
+</div>
+    <div class="form-group">
+        <label>Number of Votes</label>
+        <input type="number" class="form-control" name="votes" placeholder="No of Votes" value="{{result.votes}}">
+        <div class="text-danger">
+            {{result.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Date Of Declaration</label>
+        <input type="date" class="form-control" name="date" placeholder="Date Of Declaration" value="{{result.date}}">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/result/list2"><i class="fa fa-list-alt"></i> Display Data</a>
+    </div>
+</form>

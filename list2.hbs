@@ -1,0 +1,26 @@
+<h3><a class="btn btn-secondary" href="/result"><i class="fa fa-plus"></i> Create New</a> Result List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Party Name </th>
+            <th>Number Of Votes</th>
+            <th>Date Of Declaration</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list2}}
+        <tr>
+            <td>{{this.partyName}}</td>
+            <td>{{this.votes}}</td>
+            <td>{{this.date}}</td>
+            <td>
+                <a href="/result/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/result/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg"
+                        aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

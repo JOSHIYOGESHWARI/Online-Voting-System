@@ -1,0 +1,29 @@
+<h3><a class="btn btn-secondary" href="/voter"><i class="fa fa-plus"></i> Create New</a> Voter List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+
+            <th>Full Name</th>
+            <th>Date</th>
+            <th>City</th>
+            <th>Sex</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+
+            <td>{{this.fullName}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.sex}}</td>
+            <td>
+                <a href="/voter/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/voter/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg"
+                        aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

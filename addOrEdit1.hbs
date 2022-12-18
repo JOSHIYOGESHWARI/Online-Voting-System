@@ -1,0 +1,64 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/candidate" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{candidate._id}}">
+    {{!-- <h3>Insert Course Details</h3> --}}
+
+    <div class="form-group">
+        <label>Candidate Name</label>
+        <input type="text" class="form-control" name="candidateName" placeholder="Candidate Name"
+            value="{{candidate.candidateName}}">
+        <div class="text-danger">
+            {{candidate.candidateNameError}}</div>
+    </div>
+
+    <div class="form-group">
+        <label>Age</label>
+        <input type="number" class="form-control" name="age" placeholder="Age" value="{{candidate.age}}">
+        <div class="text-danger">
+            {{candidate.ageError}}</div>
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" name="city" placeholder="City" value="{{candidate.city}}">
+        <div class="text-danger">
+            {{candidate.cityError}}</div>
+    </div>
+        <div class="form-group">
+            <label>Ward No</label>
+            <input type="number" class="form-control" name="ward" placeholder="Ward No" value="{{candidate.ward}}">
+            <div class="text-danger">
+                {{candidate.wardError}}</div>
+        </div>
+<div class="form-group">
+    <label>Party Name</label>
+    <select class="form-control" name="partyName" placeholder="Party Name" value="{{candidate.partyName}}">
+     <option value=""></option>   
+    <option value="Congress">Congress</option>
+    <option value="Shiv sena">Shiv sena</option>
+    <option value="AAP">AAP</option>
+    <option value="NCP">NCP</option>
+    <option value="BJP">BJP</option>
+  </select>
+    <div class="text-danger">
+   {{candidate.partyNameError}}</div>
+</div>
+<div class="form-group">
+    <label>Party Symbol</label>
+    <select class="form-control" name="symbol" placeholder="Party Symbol" value="{{candidate.symbol}}">
+     <option value=""></option>   
+    <option value="Palm">Palm</option>
+    <option value="Bow and Arrow">Bow and Arrow</option>
+    <option value="Broom">Broom</option>
+    <option value="Clock">Clock</option>
+    <option value="Lotus">Lotus</option>
+  </select>
+    <div class="text-danger">
+   {{candidate.symbolError}}</div>
+</div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/candidate/list1"><i class="fa fa-list-alt"></i> Display Data</a>
+    </div>
+</form>
